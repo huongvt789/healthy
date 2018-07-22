@@ -1,0 +1,20 @@
+.header-form {
+    background-color: #4eff17;
+}
+
+.forgot-password {
+    float: right;
+    margin-top: -20px;
+}
+
+.content {
+    width: 50%;
+}
+ .account {
+     margin-bottom: 25%;
+ }
+
+select.form-group.permission {
+    margin-left: 277px;
+    height: 29px;
+}
