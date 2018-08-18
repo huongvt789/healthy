@@ -24,7 +24,7 @@ class MemberController extends Controller
      */
     public function index()
     {
-        return view('auth.register');
+        return view('backend.member.index');
     }
 
     public function create(Request $request)
