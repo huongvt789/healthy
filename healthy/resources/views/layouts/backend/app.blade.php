@@ -31,21 +31,21 @@
 <div class="container-fluid">
     <header id="header">
         <div class="nav-global">
-            <nav class="navbar navbar-inverse navbar-static-top">
+            <nav class="navbar" style="background-color: #1d7503">
                 <div id="navbar3" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-left">
-                        <li><a href="#">Logout</a></li>
+                        <li><a style="color:white;" href="#">Sytem manager lovely</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">ログイン者：山田　桃山</a></li>
+                        <li><a  style="color:white;" href="#">Log out</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
     </header>
 </div>
-<main id="main">
 
+<main id="main">
     <script src="{{asset('/js/jquery.min.js')}}"></script>
     <script src="{{asset('/js/bootstrap.min.js')}}"></script>
     @yield('content')
