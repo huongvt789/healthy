@@ -11,11 +11,7 @@
 |
 */
 
-Route::get('/', function () {    return view('welcome');
-});
-
-
-Route::get('/login', 'Auth\LoginController@getLogin')->name("login");
+Route::get('/', 'Auth\LoginController@getLogin')->name("login");
 Route::post('/login', 'Auth\LoginController@postLogin');
 Route::post('/logout', 'Auth\LoginController@logout')->name("logout");
 
@@ -23,6 +19,7 @@ Route::group(['prefix'=>'member'], function (){
     Route::get('/', 'Backend\MemberController@index')->name('member');
     Route::post('/create', 'Backend\MemberController@create')->name("create");
 });
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
