@@ -18,3 +18,12 @@ select.form-group.permission {
     margin-left: 277px;
     height: 29px;
 }
+.container-fluid.main-left {
+    color: white;
+    float: left;
+    background-color: #482cee;
+    margin-top: 10px;
+}
+.container-fluid.header-login {
+    background-color: #482cee;
+}
