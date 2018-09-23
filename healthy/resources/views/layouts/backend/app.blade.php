@@ -24,20 +24,21 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/member.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
     <![endif]-->
 </head>
 <body>
 
-<div class="container-fluid">
+<div class="container-fluid header-login">
     <header id="header">
         <div class="nav-global">
-            <nav class="navbar" style="background-color: #1d7503">
+            <nav class="navbar">
                 <div id="navbar3" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-left">
-                        <li><a style="color:white;" href="#">Sytem manager lovely</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a  style="color:white;" href="#">Log out</a></li>
+                        <li>
+                            <a class="header-top" href="{{ url('/')}}">
+                                <img class="picture" src="{{ asset('img/home-img.png')}}" alt=""></a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -45,7 +46,7 @@
     </header>
 </div>
 
-<main id="main">
+<main id="main" class="main-login">
     <script src="{{asset('/js/jquery.min.js')}}"></script>
     <script src="{{asset('/js/bootstrap.min.js')}}"></script>
     @yield('content')

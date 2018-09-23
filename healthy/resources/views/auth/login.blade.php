@@ -1,10 +1,10 @@
 @extends('layouts.backend.app')
 @section('content')
-    <div class="content container-fluid">
+    <div class="content container">
         <div class="login-box">
             <div class="panel panel-info">
-                <div class="panel-heading">
-                    <div class="panel-title text-center">SYTEM MANAGER LOVELY</div>
+                <div class="panel-heading title">
+                    <div class="panel-title text-center">{{__('auth.title')}}</div>
                 </div>
                 <div class="panel-body">
                     {!! Form::open(['route' => 'login', 'class' => 'form-horizontal']) !!}
@@ -15,12 +15,12 @@
                         <div class="col-md-9">
                             <div class="form-group">
                                 {!! Form::text('email', old('email'),
-                                ['class' => $errors->has('email') ? 'is-invalid' : 'form-control',
+                                ['class' => $errors->has('email') ? ' form-control is-invalid' : 'form-control',
                                 'placeholder' => 'Enter username or email']) !!}
                                 <p>
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong style="color: red;">{{ $errors->first('email') }}</strong>
                                     </span>
                                     @endif
                                 </p>
@@ -33,10 +33,10 @@
                         </div>
                         <div class="col-md-9">
                             <div class="form-group">
-                                {!! Form::text('password', null, ['class' => $errors->has('password') ? 'is-invalid' : 'form-control', 'placeholder' => '*****' ]) !!}
+                                {!! Form::text('password', null, ['class' => $errors->has('password') ? ' form-control is-invalid' : 'form-control', 'placeholder' => '*****' ]) !!}
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                        <strong style="color: red;">{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
                             </div>
