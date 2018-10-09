@@ -1,6 +1,3 @@
-.header-form {
-    background-color: #4eff17;
-}
 
 .forgot-password {
     float: right;
@@ -10,20 +7,62 @@
 .content {
     width: 50%;
 }
- .account {
-     margin-bottom: 25%;
- }
+
+.account {
+    margin-bottom: 25%;
+}
 
 select.form-group.permission {
     margin-left: 277px;
     height: 29px;
 }
+
 .container-fluid.main-left {
-    color: white;
-    float: left;
-    background-color: #482cee;
-    margin-top: 10px;
+    background: black;
+    margin-left: -28px;
+    width: 227px;
+    height: 100%;
 }
-.container-fluid.header-login {
-    background-color: #482cee;
+
+.container.header-login {
+    background: #e2e2f0;
+    margin-left: -86px;
+    height: 74px;
+}
+
+form.form-group.row.background {
+    /* margin-left: -20px; */
+}
+
+a.nav-link {
+    color: white;
+}
+
+.btm-sm {
+    cursor: pointer;
+}
+
+body {
+    background: #efeff4;
+}
+
+.col-md-2.form-label {
+    text-align: right;
+}
+
+form.form-group.row.background {
+    background: #e2e2f0;
+}
+
+.content-form {
+    margin-top: 36px;
+    padding: 2rem 1rem 1rem;
+}
+
+.col-md-10.btn-perform {
+    margin-left: 427px;
+}
+
+a.nav-link {
+    font-size: 17px;
 }

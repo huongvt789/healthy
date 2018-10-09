@@ -27,9 +27,15 @@ class MemberController extends Controller
         return view('backend.member.index');
     }
 
-    public function create(Request $request)
+    public function create()
     {
-        $member = Member::createAccount($request);
+        return view('backend.member.create');
+    }
+
+    public function store(Request $request)
+    {
+        $member = new Member();
+        $member->createAccount($request);
         if ($member) {
             return redirect()->route('member')->with('message', '担当者マスタが新規登録されました。');
         }

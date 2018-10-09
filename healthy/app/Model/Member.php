@@ -16,11 +16,12 @@ class Member extends Model
     protected $fillable = [
         'member_name',
         'member_phone',
-        'username',
+        'email',
         'password',
         'remember_token',
-        'member_permisson',
-        'is_deleted'
+        'member_permission',
+        'is_deleted',
+        'branch'
     ];
 
     protected $hidden = [
@@ -35,9 +36,10 @@ class Member extends Model
         $member = new Member();
         $member->member_name = $request->member_name;
         $member->member_phone = $request->member_phone;
-        $member->username = $request->username;
+        $member->email = $request->email;
         $member->password = Hash::make($request['password']);
         $member->remember_token = Hash::make($request['remember_token']);
+        $member->branch = $request->branch;
         $createMember = $member->save();
         return $createMember;
     }

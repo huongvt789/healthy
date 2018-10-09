@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="ja">
+
+<html>
 <head>
     <link rel="shortcut icon" sizes="32x32" href="">
     <link rel="icon" sizes="64x64" href="">
@@ -29,57 +29,82 @@
 </head>
 <body>
 
-<div class="container-fluid header-login">
-    <header id="header">
-        <div class="nav-global">
-            <nav class="navbar">
-                <div id="navbar3" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-left">
-                        <li>
-                            <a class="header-top" href="{{ url('/')}}">
-                                <img class="picture" src="{{ asset('img/home-img.png')}}" alt=""></a>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav  navbar-right" >
-                        <li><a style="color: white" href="#">ログイン者：山田　桃山</a></li>
-                        <li style="color: white">
-                            <a style="color: white" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                  document.getElementById('logout-form').submit();">ログアウト</a>
-                        </li>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </ul>
+<div class="col-md-12">
+    <div class="col-md-3">
+        <div class="container-fluid main-left">
+            <div class="nav-global">
+                <nav class="header-left">
+                    <h3 style="color: red">Manager System</h3>
+                </nav>
+                <div class="content-main-left">
+                    <div class="sidebar-nav ps ps--active-y">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link " href="{{route('member')}}"><span class="glyphicon glyphicon-pencil"></span>
+                                    Manage Member
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=""> <i class="glyphicon glyphicon-th-list"></i>Advisory</a>
+                            </li>
+                            <li class = "nav-item">
+                                <a class="nav-link" href=""><i class="glyphicon-fast-backward"></i>Customer</a>
+                            </li>
+                            <li class = "nav-item">
+                                <a class="nav-link" href=""><i class="glyphicon-fast-backward"></i>Invoice</a>
+                            </li>
+                            <li class = "nav-item">
+                                <a class="nav-link" href="{{route('member')}}"><i class="glyphicon-fast-backward"></i>Member</a>
+                            </li>
+                            <li class = "nav-item">
+                                <a class="nav-link" href=""><i class="glyphicon-fast-backward"></i>News</a>
+                            </li>
+                            <li class = "nav-item">
+                                <a class="nav-link" href=""><i class="glyphicon-fast-backward"></i>Partner</a>
+                            </li>
+                            <li class = "nav-item">
+                                <a class="nav-link" href=""><i class="glyphicon-fast-backward"></i>Company</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </nav>
+            </div>
         </div>
-    </header>
-</div>
-<div class="container-fluid main-left">
-    <div class="nav-global">
-        <nav class="header-left">
-            <h3>Manager System</h3>
-        </nav>
-        <div class="content-main-left">
-            <ul>
-                <li>
-                    <a href="">Member</a>
-                </li>
-                <li>
-                    <a href="">Service</a>
-                </li>
-                <li>
-                    <a href="">Customer</a>
-                </li>
-            </ul>
+    </div>
+    <div class="col-md-9">
+        <div class="container header-login">
+            <header id="header">
+                <div class="nav-global">
+                    <nav class="navbar">
+                        <div id="navbar3" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav navbar-left">
+                                <li>
+                                    <a class="header-top" href="{{ url('/')}}">
+                                        <img class="picture" src="{{ asset('img/home-img.png')}}" alt=""></a>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav  navbar-right">
+                                <li><a style="color: white" href="#">ログイン者：山田　桃山</a></li>
+                                <li style="color: white">
+                                    <a style="color: white" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">ログアウト</a>
+                                </li>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+        </div>
+        <div id="main" class="main-content">
+            @yield('content')
+            <script src="{{asset('/js/jquery.min.js')}}"></script>
+            <script src="{{asset('/js/bootstrap.min.js')}}"></script>
         </div>
     </div>
 </div>
-<main id="main" class="main-login">
-    <script src="{{asset('/js/jquery.min.js')}}"></script>
-    <script src="{{asset('/js/bootstrap.min.js')}}"></script>
-    @yield('content')
-</main>
 </body>
 </html>
