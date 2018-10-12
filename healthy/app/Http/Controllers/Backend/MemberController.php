@@ -24,11 +24,20 @@ class MemberController extends Controller
      */
     public function index()
     {
-        return view('backend.member.index');
+        $param = $this->request->toArray();
+        if(isset($param['name'])){
+        $member = Member::search($param);
+        $member->appends(['search' => $param['name']]);
+        }
+        else{
+            $member = Member::search();
+        }
+        return view('backend.member.index', ['member' => $member, 'param' => $param])->render();
     }
 
     public function create()
     {
+
         return view('backend.member.create');
     }
 

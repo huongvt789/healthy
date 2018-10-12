@@ -29,7 +29,8 @@ class Member extends Model
         'remember_token',
     ];
 
-    const IS_APPROVE_PERMISSION = 1;
+    const IS_PERMISSION = 1;
+    const IS_ACTIVE = 0;
 
     public function createAccount($request)
     {
@@ -42,5 +43,16 @@ class Member extends Model
         $member->branch = $request->branch;
         $createMember = $member->save();
         return $createMember;
+    }
+
+    protected function search($paramSearch  = null){
+        if($paramSearch == null){
+            return $this::where('is_deleted', Member::IS_ACTIVE)->orderBy('id', 'desc')->paginate(5);//
+        }
+        else{
+            return $this::where('member_name', 'LIKE', '%'.$paramSearch['name'].'%')
+                ->orWhere('email', 'LIKE', $paramSearch['name'].'%')
+                ->where('is_deleted', Member::IS_ACTIVE)->orderBy('id', 'desc')->paginate(5);
+        }
     }
 }

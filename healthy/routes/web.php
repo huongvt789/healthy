@@ -21,6 +21,12 @@ Route::group(['prefix'=>'member'], function (){
     Route::post('/store', 'Backend\MemberController@store')->name("store");
 });
 
+Route::group(['prefix' => 'branch'], function (){
+   Route::get('/', 'Backend\BranchController@index')->name('branch');
+   Route::get('/create', 'Backend\BranchController@create')->name('create');
+   Route::post('/store', 'Backend\BranchController@store')->name('store');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

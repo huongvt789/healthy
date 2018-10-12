@@ -45,6 +45,11 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link " href="{{route('member')}}"><span class="glyphicon glyphicon-pencil"></span>
+                                    Manage Member
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href=""> <i class="glyphicon glyphicon-th-list"></i>Advisory</a>
                             </li>
                             <li class = "nav-item">

@@ -51,7 +51,7 @@ body {
 }
 
 form.form-group.row.background {
-    background: #e2e2f0;
+    background: #f1f1f4;
 }
 
 .content-form {
@@ -65,4 +65,31 @@ form.form-group.row.background {
 
 a.nav-link {
     font-size: 17px;
+}
+
+input.form-control.search {
+    width: 40%;
+    padding: 4px 25px;
+}
+select {
+    margin-left: 50%;
+    margin-top: -5%;
+    font-size: 17px;
+    height: 30px;
+    margin-left: 350px;
+    position: relative;
+    top: -5px;
+}
+
+button.btn.btn-primary {
+    margin-left: 60%;
+    position: relative;
+    top: -62px;
+}
+
+.data-list {
+    margin-bottom: 1rem;
+    -ms-flex-direction: column;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
 }
