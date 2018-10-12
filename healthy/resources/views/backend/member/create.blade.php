@@ -52,15 +52,34 @@
                         {!! Form::label('', 'Branch') !!}
                     </div>
                     <div class="col-md-10">
-                        {!! Form::text('branch', null, ['class' => 'form-control']) !!}
+                        <div class="form-group">
+                            {!! Form::select('', ['Choose branch' ,
+                               'Cats',
+                               'Dogs'])
+                            !!}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-2 form-label">
+                        {!! Form::label('', 'Date of birth') !!}
+                    </div>
+                    <div class="col-md-10">
+                        {!! Form::text('age', null, ['class' => 'form-control']) !!}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-2 form-label">
+                        {!! Form::label('', 'Certificate') !!}
+                    </div>
+                    <div class="col-md-10">
+                        {!! Form::textarea('certificate', null, ['class' => 'form-control']) !!}
                     </div>
                 </div>
             </div>
-            <div class="form-group row">
-                <div class="col-md-10 btn-perform">
-                    {!! Form::button('BACK', ['class' => 'btn btn-primary btn-member-back']) !!}
-                    {!! Form::submit('SAVE', ['class' => 'btn btn-success btn-member']) !!}
-                </div>
+            <div class="btn-perform-add ">
+                {!! Form::button('BACK', ['class' => 'btn btn-primary btn-member-back']) !!}
+                {!! Form::submit('SAVE', ['class' => 'btn btn-success btn-member']) !!}
             </div>
             {!! Form::close() !!}
         </div>

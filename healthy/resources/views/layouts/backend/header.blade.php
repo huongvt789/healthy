@@ -14,7 +14,7 @@
     <meta property="og:site_name" content=""/>
     <meta property="og:country-name" content=""/>
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
-    <title>System</title>
+    <title>Doctor</title>
 
     <!-- Bootstrap CSS -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -30,7 +30,7 @@
 <body>
 
 <div class="col-md-12">
-    <div class="col-md-3">
+    <div class="col-md-3 col-xs-3 col-sm-3">
         <div class="container-fluid main-left">
             <div class="nav-global">
                 <nav class="header-left">
@@ -45,8 +45,8 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="{{route('member')}}"><span class="glyphicon glyphicon-pencil"></span>
-                                    Manage Member
+                                <a class="nav-link " href="{{route('branch')}}"><span class="glyphicon glyphicon-pencil"></span>
+                                    Branch
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -76,7 +76,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-9 col-xs-9 col-sm-9">
         <div class="container header-login">
             <header id="header">
                 <div class="nav-global">

@@ -59,9 +59,6 @@ form.form-group.row.background {
     padding: 2rem 1rem 1rem;
 }
 
-.col-md-10.btn-perform {
-    margin-left: 427px;
-}
 
 a.nav-link {
     font-size: 17px;
@@ -92,4 +89,14 @@ button.btn.btn-primary {
     -ms-flex-direction: column;
     background-color: #fff;
     border: 1px solid rgba(0,0,0,.125);
+}
+.btn-perform-add {
+    position: relative;
+    top: 60px;
+    left: -142px;
+}
+
+input.btn.btn-success.btn-member {
+    position: relative;
+    top: -62px;
 }

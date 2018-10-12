@@ -20,6 +20,9 @@ class Member extends Model
         'password',
         'remember_token',
         'member_permission',
+        'id_branch',
+        'age',
+        'certificate',
         'is_deleted',
         'branch'
     ];

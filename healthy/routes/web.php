@@ -23,8 +23,8 @@ Route::group(['prefix'=>'member'], function (){
 
 Route::group(['prefix' => 'branch'], function (){
    Route::get('/', 'Backend\BranchController@index')->name('branch');
-   Route::get('/create', 'Backend\BranchController@create')->name('create');
-   Route::post('/store', 'Backend\BranchController@store')->name('store');
+   Route::get('/create', 'Backend\BranchController@create')->name('branch.create');
+   Route::post('/store', 'Backend\BranchController@store')->name('branch.store');
 });
 
 Auth::routes();
