@@ -16,10 +16,13 @@ class CreateMembersTable extends Migration
         Schema::create('members', function (Blueprint $table) {
             $table->increments('id');
             $table->string('member_name',256);
-            $table->string('member_phone',32)->nullable();
-            $table->integer('member_permisson')->default(0);
-            $table->string('username',256);
+            $table->string('member_phone',32);
+            $table->integer('member_permission')->default(0);
+            $table->string('email',256);
             $table->string('password',256);
+            $table->integer('id_branch')->unsigned();
+            $table->date('age');
+            $table->string('certificate',256)->nullable();
             $table->integer('is_deleted')->default(0);
             $table->rememberToken();
             $table->timestamps();
@@ -36,3 +39,4 @@ class CreateMembersTable extends Migration
         Schema::dropIfExists('members');
     }
 }
+

@@ -1,0 +1,28 @@
+.container-fluid.header-login {
+    background-color: #e2e2f0;
+}
+
+img.picture {
+    height: 48px;
+}
+
+a.header-top {
+    height: 62px;
+}
+
+.login-box {
+    margin-top: 37px;
+}
+
+.panel-heading.title {
+    background-color: blue;
+    height: 55px;
+}
+
+.panel-title.text-center {
+    color: #f3efef;
+    margin-top: 6px;
+}
+.panel-body {
+    background: #f3f3fe;
+}

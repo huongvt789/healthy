@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Model\Branch;
 use App\Model\Member;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class MemberController extends Controller
 {
@@ -24,12 +26,27 @@ class MemberController extends Controller
      */
     public function index()
     {
-        return view('backend.member.index');
+        $param = $this->request->toArray();
+        if(isset($param['name'])){
+        $member = Member::search($param);
+        $member->appends(['search' => $param['name']]);
+        }
+        else{
+            $member = Member::search();
+        }
+        return view('backend.member.index', ['member' => $member, 'param' => $param])->render();
     }
 
-    public function create(Request $request)
+    public function create()
     {
-        $member = Member::createAccount($request);
+        $branch = DB::table('branchs')->pluck('name', 'id')->toArray();
+        return view('backend.member.create', ['branch' => $branch, 'status' => Member::IS_PERMISSION]);
+    }
+
+    public function store(Request $request)
+    {
+        $member = new Member();
+        $member->createAccount($request);
         if ($member) {
             return redirect()->route('member')->with('message', '担当者マスタが新規登録されました。');
         }

@@ -16,11 +16,15 @@ class Member extends Model
     protected $fillable = [
         'member_name',
         'member_phone',
-        'username',
+        'email',
         'password',
         'remember_token',
-        'member_permisson',
-        'is_deleted'
+        'member_permission',
+        'id_branch',
+        'age',
+        'certificate',
+        'is_deleted',
+        'branch'
     ];
 
     protected $hidden = [
@@ -28,17 +32,36 @@ class Member extends Model
         'remember_token',
     ];
 
-    const IS_APPROVE_PERMISSION = 1;
+    const IS_PERMISSION =
+        [
+            1 => 'Admin',
+            2 => 'Manager'
+        ];
+    const IS_ACTIVE = 0;
 
     public function createAccount($request)
     {
         $member = new Member();
         $member->member_name = $request->member_name;
-        $member->member_phone = $request->member_phone;
-        $member->username = $request->username;
+        $member->email = $request->email;
         $member->password = Hash::make($request['password']);
-        $member->remember_token = Hash::make($request['remember_token']);
+        $member->member_phone = $request->member_phone;
+        $member->member_permission = $request->permission;
+        $member->id_branch = $request->branch;
+        $member->age = $request->age;
+        $member->certificate = $request->certificate;
         $createMember = $member->save();
         return $createMember;
+    }
+
+    protected function search($paramSearch  = null){
+        if($paramSearch == null){
+            return $this::where('is_deleted', Member::IS_ACTIVE)->orderBy('id', 'desc')->paginate(5);//
+        }
+        else{
+            return $this::where('member_name', 'LIKE', '%'.$paramSearch['name'].'%')
+                ->orWhere('email', 'LIKE', $paramSearch['name'].'%')
+                ->where('is_deleted', Member::IS_ACTIVE)->orderBy('id', 'desc')->paginate(5);
+        }
     }
 }

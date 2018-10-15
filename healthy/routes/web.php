@@ -17,7 +17,14 @@ Route::post('/logout', 'Auth\LoginController@logout')->name("logout");
 
 Route::group(['prefix'=>'member'], function (){
     Route::get('/', 'Backend\MemberController@index')->name('member');
-    Route::post('/create', 'Backend\MemberController@create')->name("create");
+    Route::get('/create', 'Backend\MemberController@create')->name('create');
+    Route::post('/store', 'Backend\MemberController@store')->name("store");
+});
+
+Route::group(['prefix' => 'branch'], function (){
+   Route::get('/', 'Backend\BranchController@index')->name('branch');
+   Route::get('/create', 'Backend\BranchController@create')->name('branch.create');
+   Route::post('/store', 'Backend\BranchController@store')->name('branch.store');
 });
 
 Auth::routes();
