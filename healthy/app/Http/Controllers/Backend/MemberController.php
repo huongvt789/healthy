@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Model\Branch;
 use App\Model\Member;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class MemberController extends Controller
 {
@@ -37,8 +39,8 @@ class MemberController extends Controller
 
     public function create()
     {
-
-        return view('backend.member.create');
+        $branch = DB::table('branchs')->pluck('name', 'id')->toArray();
+        return view('backend.member.create', ['branch' => $branch, 'status' => Member::IS_PERMISSION]);
     }
 
     public function store(Request $request)

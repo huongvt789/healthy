@@ -28,6 +28,7 @@
                 <table class="table table-striped">
                     <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Name</th>
                         <th>E-mail</th>
                         <th>Phone</th>
@@ -39,13 +40,17 @@
                     <tbody>
                     @foreach($member as $item)
                     <tr>
+                        <td>{{$item->id}}</td>
                         <td>{{$item->member_name}}</td>
                         <td>{{$item->email}}</td>
                         <td>{{$item->member_phone}}</td>
-                        <td>{{$item->branch}}</td>
-                        <td>{{$item->permission}}</td>
-                        <td><p>q</p>
-                            <p>b</p>
+                        <td>{{\App\Model\Branch::select('name')->where('id', $item->id_branch)->pluck('name')->first()}}</td>
+                        <td>{{$item->member_permission == 1 ? 'Admin' : ''}}
+                        {{$item->member_permission == 2 ? 'Manager' : ''}}
+                        </td>
+                        <td>
+                            <p>Edit</p>
+                            <p>Delete</p>
                         </td>
                     </tr>
                     @endforeach

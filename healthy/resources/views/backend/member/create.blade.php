@@ -44,7 +44,11 @@
                         {!! Form::label('', 'Permission') !!}
                     </div>
                     <div class="col-md-10">
-                        {!! Form::text('member_permission', null, ['class' => 'form-control']) !!}
+                        <select name="permission">
+                            @foreach ($status as $key => $value)
+                                <option value="{{ $key }}">{{ $value }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -52,12 +56,11 @@
                         {!! Form::label('', 'Branch') !!}
                     </div>
                     <div class="col-md-10">
-                        <div class="form-group">
-                            {!! Form::select('', ['Choose branch' ,
-                               'Cats',
-                               'Dogs'])
-                            !!}
-                        </div>
+                        <select name="branch">
+                            @foreach ($branch as $key => $value)
+                                <option value="{{ $key }}">{{ $value }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="form-group row">

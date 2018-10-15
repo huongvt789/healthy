@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="content-main">
-        {!! Form::open(['route' => 'store', 'class' =>'form-group row background']) !!}
+        {!! Form::open(['route' => 'branch.store', 'class' =>'form-group row background']) !!}
         <div class="content-form">
             <div class="form-group row">
                 <div class="col-md-2 form-label">

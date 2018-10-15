@@ -32,18 +32,24 @@ class Member extends Model
         'remember_token',
     ];
 
-    const IS_PERMISSION = 1;
+    const IS_PERMISSION =
+        [
+            1 => 'Admin',
+            2 => 'Manager'
+        ];
     const IS_ACTIVE = 0;
 
     public function createAccount($request)
     {
         $member = new Member();
         $member->member_name = $request->member_name;
-        $member->member_phone = $request->member_phone;
         $member->email = $request->email;
         $member->password = Hash::make($request['password']);
-        $member->remember_token = Hash::make($request['remember_token']);
-        $member->branch = $request->branch;
+        $member->member_phone = $request->member_phone;
+        $member->member_permission = $request->permission;
+        $member->id_branch = $request->branch;
+        $member->age = $request->age;
+        $member->certificate = $request->certificate;
         $createMember = $member->save();
         return $createMember;
     }

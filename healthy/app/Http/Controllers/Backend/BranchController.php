@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Model\Branch;
 use Illuminate\Http\Request;
 
 class BranchController extends Controller
@@ -14,7 +15,8 @@ class BranchController extends Controller
      */
     public function index()
     {
-        return view('backend.branch.index');
+        $branch = Branch::all();
+        return view('backend.branch.index', ['branch' => $branch]);
     }
 
     /**
@@ -35,7 +37,12 @@ class BranchController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $branch = new Branch();
+        $branch->createBranch($request);
+        if($branch){
+            return redirect()->route('branch')->with('message', '担当者マスタが新規登録されました。');
+        }
+        return redirect()->route('branch')->with('error', '担当者マスタの登録に失敗しました。');
     }
 
     /**
