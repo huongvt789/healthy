@@ -14,7 +14,7 @@
     <meta property="og:site_name" content=""/>
     <meta property="og:country-name" content=""/>
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
-    <title>System</title>
+    <title>Doctor</title>
 
     <!-- Bootstrap CSS -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

@@ -33,7 +33,7 @@
                         </div>
                         <div class="col-md-9">
                             <div class="form-group">
-                                {!! Form::text('password', null, ['class' => $errors->has('password') ? ' form-control is-invalid' : 'form-control', 'placeholder' => '*****' ]) !!}
+                                <input type="password" name="password" class ="{{$errors->has('password') ? 'form-control is-invalid' : 'form-control'}}" placeholder="************">
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong style="color: red;">{{ $errors->first('password') }}</strong>
@@ -44,18 +44,16 @@
                     </div>
 
                     <div class="col-md-12">
-                        <div class="col-md-4  offset-md-4 form-check">
+                        <div class="col-md-6a offset-md-4 form-check">
                             {!! Form::checkbox('remember', old('remember') ? 'checked' : '') !!}
                             {!! Form::label('', 'Remember') !!}
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-6">
                             <input type="submit" id="company-save" class="btn btn-success" value="Login">
-                            <input type="button" class="btn btn-primary" name = 'fb-login' value="Login with Facebook">
                         </div>
-
                     </div>
                     <div class="form-group">
-                        <div class="col-md-12 text-centerx">
+                        <div class="col-md-1 text-centext">
                             <a class="btn btn-link"  href="{{ route('password.request') }}" style="margin-left: 200px; margin-top: 20px;">
                                 {{ __('Forgot Your Password?') }}
                             </a>
