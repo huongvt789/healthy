@@ -13,6 +13,9 @@
 
 Route::get('/', 'Auth\LoginController@getLogin')->name("login");
 Route::post('/login', 'Auth\LoginController@postLogin');
+Route::get('/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name("reset");
+Route::post('email', 'Auth\ResetPasswordController@sendResetLinkEmail')->name("password.email");
+
 Route::post('/logout', 'Auth\LoginController@logout')->name("logout");
 
 Route::group(['prefix'=>'member'], function (){

@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="col-md-12">
-                        <div class="col-md-6a offset-md-4 form-check">
+                        <div class="col-md-6 offset-md-4 form-check">
                             {!! Form::checkbox('remember', old('remember') ? 'checked' : '') !!}
                             {!! Form::label('', 'Remember') !!}
                         </div>
@@ -54,7 +54,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-1 text-centext">
-                            <a class="btn btn-link"  href="{{ route('password.request') }}" style="margin-left: 200px; margin-top: 20px;">
+                            <a class="btn btn-link"  href="{{ route('reset') }}" style="margin-left: 200px; margin-top: 20px;">
                                 {{ __('Forgot Your Password?') }}
                             </a>
                         </div>
