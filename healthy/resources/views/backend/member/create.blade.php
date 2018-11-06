@@ -9,66 +9,87 @@
             <div class="content-form">
                 <div class="form-group row">
                     <div class="col-md-2 form-label">
-                        {!! Form::label('', 'Name') !!}
+                        {!! Form::label('', 'Name',['class' => 'inline']), '<span class="text-danger"> *</span>'; !!}
                     </div>
                     <div class="col-md-10">
                         {!! Form::text('member_name', null, ['class' => 'form-control']) !!}
+                        <div class="text-danger">
+                            {!! $errors->first('member_name') !!}
+                        </div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-2 form-label">
-                        {!! Form::label('', 'E-mail') !!}
+                        {!! Form::label('', 'E-mail',['class' => 'inline']), '<span class="text-danger"> *</span>'; !!}
                     </div>
                     <div class="col-md-10">
                         {!! Form::text('email', null, ['class' => 'form-control']) !!}
+                        <div class="text-danger">
+                            {!! $errors->first('email') !!}
+                        </div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-2 form-label">
-                        {!! Form::label('', 'Password') !!}
+                        {!! Form::label('', 'Password',['class' => 'inline']), '<span class="text-danger"> *</span>'; !!}
                     </div>
                     <div class="col-md-10">
                         {!! Form::text('password', null, ['class' => 'form-control']) !!}
+                        <div class="text-danger">
+                            {!! $errors->first('password') !!}
+                        </div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-2 form-label">
-                        {!! Form::label('', 'Phone') !!}
+                        {!! Form::label('', 'Phone',['class' => 'inline']), '<span class="text-danger"> *</span>'; !!}
                     </div>
                     <div class="col-md-10">
                         {!! Form::text('member_phone', null, ['class' => 'form-control']) !!}
+                        <div class="text-danger">
+                            {!! $errors->first('member_phone') !!}
+                        </div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-2 form-label">
-                        {!! Form::label('', 'Permission') !!}
+                        {!! Form::label('', 'Permission', ['class' => 'inline']), '<span class="text-danger"> *</span>'; !!}
                     </div>
-                    <div class="col-md-10">
-                        <select name="permission">
+                    <div class="col-md-6">
+                        <select name="permission" class="form-control select-permission">
                             @foreach ($status as $key => $value)
                                 <option value="{{ $key }}">{{ $value }}</option>
                             @endforeach
                         </select>
+                        <div class="text-danger">
+                            {!! $errors->first('permission') !!}
+                        </div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-2 form-label">
-                        {!! Form::label('', 'Branch') !!}
+                        {!! Form::label('', 'Branch', ['class' => 'inline']), '<span class="text-danger"> *</span>';!!}
                     </div>
-                    <div class="col-md-10">
-                        <select name="branch">
+                    <div class="col-md-6">
+                        <select name="branch" class="form-control select-branch">
                             @foreach ($branch as $key => $value)
                                 <option value="{{ $key }}">{{ $value }}</option>
                             @endforeach
                         </select>
+                        <div class="text-danger">
+                            {!! $errors->first('branch') !!}
+                        </div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-2 form-label">
-                        {!! Form::label('', 'Date of birth') !!}
+                        {!! Form::label('', 'Date of birth', ['class' => 'inline']), '<span class="text-danger"> *</span>'; !!}
                     </div>
                     <div class="col-md-10">
-                        {!! Form::text('age', null, ['class' => 'form-control']) !!}
+                        {!! Form::date('age', null, ['class' => 'form-control', 'id' => 'datepicker']) !!}
+                        <div class="text-danger">
+                            {!! $errors->first('age') !!}
+                        </div>
                     </div>
                 </div>
                 <div class="form-group row">

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Model\Branch;
+use App\Http\Requests\MemberRequest;
 use App\Model\Member;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -43,8 +43,9 @@ class MemberController extends Controller
         return view('backend.member.create', ['branch' => $branch, 'status' => Member::IS_PERMISSION]);
     }
 
-    public function store(Request $request)
+    public function store(MemberRequest $request)
     {
+        $request->validated();
         $member = new Member();
         $member->createAccount($request);
         if ($member) {
