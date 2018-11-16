@@ -14,19 +14,14 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    <form method="POST" class="form-horizontal" action="{{ route('password.email') }}"
-                          aria-label="{{ __('Reset Password') }}">
-                        @csrf
+                    {!! Form::open(['route' => 'password.email', 'class' => 'form-horizontal']) !!}
                         <div class="form-group row">
                             <div class="col-md-4">
-                                <label for="email"
-                                       class="col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                {!! Form::label('', 'E-Mail Address', ['class' => 'col-form-label text-md-right']) !!}
                             </div>
                             <div class="col-md-8">
-                                <input id="email" type="email"
-                                       class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"
-                                       value="{{ old('email') }}" required>
+                                {!! Form::email('email', old('email'), ['class' => $errors->has('email') ? ' form-control is-invalid' : 'form-control',
+                                'placeholder' => 'Enter username or email']) !!}
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -49,7 +44,7 @@
                                     </a></div>
                             </div>
                         </div>
-                    </form>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
